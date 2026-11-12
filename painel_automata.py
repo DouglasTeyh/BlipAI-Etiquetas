@@ -359,9 +359,8 @@ def build_row_data_pplb(labels_in_row, offset_x_mm=0.0, offset_y_mm=0.0, used_co
             commands.append(f'A{text_x},{y_attributes},0,1,1,1,N,"{attributes.replace(chr(34), "")}"')
         commands.append(f'A{text_x},{y_price},0,3,1,1,N,"{price_text.replace(chr(34), "")}"')
         sku_text = (strip_accents(sku).upper()).replace(chr(34), "") or "SEM SKU"
-        # Ajuste de truncagem segura para etiqueta térmica 33 x 17 mm:
-        # Code128 em barra fina (p5=1) suporta com segurança até 18 caracteres sem estourar as margens.
-        sku_text = sku_text[:18].rstrip()
+        # Layout original restaurado: SKU seguro ultra-curto (ate 9-12 chars) centralizado perfeitamente
+        sku_text = sku_text[:12].rstrip()
 
         # SKU como codigo de barras CODE 128 (BPLB).
         # p5=1: barra fina; p6=2: barra grossa; p7=28: altura.
