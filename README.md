@@ -11,3 +11,4 @@ Requer Python 3.8+:
 pip install -r requirements.txt
 python painel_automata.py
 ```
+
