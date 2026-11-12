@@ -1,0 +1,30 @@
+COMO BUILDAR O Painel AUTOMATA.exe NO WINDOWS
+=============================================
+
+1. Copie esta PASTA INTEIRA para o PC Windows (ex.: Pen drive ou pasta Downloads).
+2. No Windows, de dois cliques em:  build_painel_automata_windows.bat
+3. Aguarde o PyInstaller terminar (pode demorar alguns minutos num i3).
+4. Ao final, o app sai em:  dist\Painel AUTOMATA.exe
+
+IMPORTANTE - CONFIGURACAO
+- Ao usar, mantenha o arquivo painel_automata_config.json NA MESMA PASTA
+  do Painel AUTOMATA.exe. Ele ja vem com a URL e o token da API.
+- O app le esse arquivo ao abrir e salva offsets/API nele ao Usar o app.
+
+REQUISITOS NO WINDOWS
+- Python 3.8 instalado (com a opcao "Add Python to PATH" marcada).
+- Internet no PC para o pip baixar PyInstaller/pywin32/Pillow (so na 1a vez).
+
+O QUE O APP FAZ COM A API
+- Abre automaticamente e fica "de olho" na API
+  (webhook.casadobebeoficial.com.br/api/etiquetas/produtos).
+- Produtos novos (sem SKU que ganharam SKU e preco) entram na fila sozinhos.
+- Apos imprimir, devolve confirmacao por produto na API.
+
+COMO NAVEGAR
+- Esta versao tem apenas a aba Etiquetas.
+- A navegacao fica na barra superior da janela. O item destacado e o que
+  esta aberto.
+- Em Etiquetas, o botao "IMPRIMIR FILA" fica embaixo a direita; o
+  contador de itens fica no topo a direita, ao lado de "Imprimir
+  selecionadas".
